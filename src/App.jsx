@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Timer from './components/Timer';
+import Settings from './components/Settings';
 import './App.css';
 
 const App = () => {
@@ -11,6 +13,7 @@ const App = () => {
         <button className="tab-button" onClick={() => setActiveTab('shortBreak')}>Short Break</button>
         <button className="tab-button" onClick={() => setActiveTab('longBreak')}>Long Break</button>
       </div>
+      <Timer activeTab={activeTab} />
     </div>
   );
 };
