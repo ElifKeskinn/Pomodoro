@@ -1,12 +1,18 @@
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
 
-function App() {
+const App = () => {
+  const [activeTab, setActiveTab] = useState('pomodoro');
 
   return (
-    <>
-      <h1>a</h1>
-    </>
-  )
-}
+    <div className="app">
+      <div className="tabs">
+        <button className="tab-button" onClick={() => setActiveTab('pomodoro')}>Pomodoro</button>
+        <button className="tab-button" onClick={() => setActiveTab('shortBreak')}>Short Break</button>
+        <button className="tab-button" onClick={() => setActiveTab('longBreak')}>Long Break</button>
+      </div>
+    </div>
+  );
+};
 
-export default App
+export default App;
