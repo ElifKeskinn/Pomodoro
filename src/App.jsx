@@ -14,6 +14,7 @@ const App = () => {
         <button className="tab-button" onClick={() => setActiveTab('longBreak')}>Long Break</button>
       </div>
       <Timer activeTab={activeTab} />
+      <Settings />
     </div>
   );
 };
