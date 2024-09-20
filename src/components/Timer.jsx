@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+//import ProgressCircle from './ProgressCircle';
 
 const Timer = ({ activeTab, settings }) => {
   const [time, setTime] = useState(0);
@@ -45,6 +46,12 @@ const Timer = ({ activeTab, settings }) => {
   return (
     <div className="timer">
       <h1>{formatTime(time)}</h1>
+    {/*<ProgressCircle 
+        time={time} 
+        duration={settings.pomodoroTime *60} 
+        isActive={isActive} 
+        selectedTheme={settings.selectedTheme} 
+      />*/} 
       <button className="control-button" onClick={handleStartPause}>
         {isActive ? 'Pause' : 'Start'}
       </button>

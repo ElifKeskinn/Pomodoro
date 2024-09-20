@@ -139,7 +139,7 @@ input[type="number"] {
   cursor: pointer;
   padding: 10px;
   margin: 0 5px;
-  border-radius: 5px;
+  border-radius: 50%;
 }
 
 .font-button.active,
