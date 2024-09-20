@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from 'react';
 
-const Timer = ({ activeTab }) => {
+const Timer = ({ activeTab, settings }) => {
   const [time, setTime] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     switch (activeTab) {
       case 'pomodoro':
-        setTime(25 * 60);
+        setTime(settings.pomodoroTime * 60);
         break;
       case 'shortBreak':
-        setTime(5 * 60);
+        setTime(settings.shortBreakTime * 60);
         break;
       case 'longBreak':
-        setTime(15 * 60);
+        setTime(settings.longBreakTime * 60);
         break;
       default:
-        setTime(25 * 60);
+        setTime(settings.pomodoroTime * 60);
     }
-  }, [activeTab]);
+  }, [activeTab, settings]);
 
   useEffect(() => {
     let interval = null;
     if (isActive) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime > 0 ? prevTime - 1 : 0);
+        setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
       }, 1000);
     } else if (!isActive && time !== 0) {
       clearInterval(interval);
@@ -34,11 +34,6 @@ const Timer = ({ activeTab }) => {
 
   const handleStartPause = () => {
     setIsActive(!isActive);
-  };
-
-  const handleReset = () => {
-    setIsActive(false);
-    setTime(activeTab === 'pomodoro' ? 25 * 60 : activeTab === 'shortBreak' ? 5 * 60 : 15 * 60);
   };
 
   const formatTime = (seconds) => {
@@ -53,7 +48,6 @@ const Timer = ({ activeTab }) => {
       <button className="control-button" onClick={handleStartPause}>
         {isActive ? 'Pause' : 'Start'}
       </button>
-      <button className="control-button" onClick={handleReset}>Reset</button>
     </div>
   );
 };

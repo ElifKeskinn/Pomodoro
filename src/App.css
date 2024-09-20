@@ -1,55 +1,159 @@
+body,
+html {
+  background-color: #1E213F;
+}
+
 .app {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
-  
-  .tabs {
-    margin: 20px 0;
-  }
-  
-  .tab-button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #ddd;
-  }
-  
-  .tab-button.active {
-    background-color: #bbb;
-  }
-  
-  .timer {
-    margin: 20px 0;
-  }
-  
-  .control-button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .settings {
-    margin: 20px 0;
-  }
-  
-  .setting-group {
-    margin-bottom: 15px;
-  }
-  
-  .setting-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .apply-button {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    background-color: #28a745;
-    color: white;
-  }
-  
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1E213F;
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #D7E0FF;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #161932, #1E213F);
+  border-radius: 50%;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+.timer h1 {
+  font-size: 60px;
+  color: white;
+  margin: 0;
+  z-index: 1;
+}
+
+
+/* Control button */
+.control-button {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  color: #D7E0FF;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 400px;
+  z-index: 1000;
+}
+
+
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #172040;
+}
+
+.setting-group {
+  margin-bottom: 20px;
+}
+
+.time-settings,
+.font-settings,
+.theme-settings {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border: none;
+  background-color: #cdcdce;
+  color: #000000;
+  text-align: center;
+  border-radius: 8px;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Settings icon button */
+.settings-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #bec9f2;
+}
+
+
+.font-button,
+.theme-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.font-button.active,
+.theme-button.active {
+  border: 2px solid #000;
+}
+
+.apply-button {
+  background-color: #F87070;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+}
